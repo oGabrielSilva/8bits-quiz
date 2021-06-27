@@ -1,0 +1,12 @@
+<div class="container my-3 p-3 bg-white rounded shadow-sm">
+    <% groupAdm.forEach(adm => { %>
+        <span class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@<%- adm.username %> | <%- adm.name %></h5>
+                <small class="text-muted"><%- adm.date %></small>
+            </div>
+            <p class="mb-1"><%- adm.description %></p>
+            <small class="text-muted"><%- adm.email %></small>
+        </span>
+    <% }) %>
+</div>

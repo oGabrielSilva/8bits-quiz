@@ -1,0 +1,60 @@
+<%- include('./includes/head') %>
+  <%- include('./includes/nav') %>
+    <%- include('./includes/messages') %>
+      <% if(!adm) { %>
+        <div class="container my-3 p-3 bg-white rounded shadow-sm">
+          <form action="/system.config.login" method="POST">
+            <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input name="email" type="email" class="form-control mb-3" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="@username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control mb-4" id="exampleInputPassword1"
+                placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+        </div>
+        
+        <% } else { %>
+        
+          <div class="container my-3 p-3 bg-white rounded shadow-sm">
+            <p class="h4">Adicionar novo adm</p>
+            <form action="/system.config.create.adm" method="POST">
+              <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+              <div class="form-group">
+                <label for="exampleInputUsername">Username</label>
+                <input name="username" type="text" class="form-control mb-3" id="exampleInputUsername"
+                  aria-describedby="emailHelp" placeholder="@username">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail">Email</label>
+                <input name="email" type="email" class="form-control mb-3" id="exampleInputEmail"
+                  aria-describedby="emailHelp" placeholder="adm.corp.exemplo@8bits.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputName">Nome</label>
+                <input name="name" type="text" class="form-control mb-3" id="exampleInputName"
+                  aria-describedby="emailHelp" placeholder="Stevan Doe">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputDescription">Descrição</label>
+                <input name="description" type="text" class="form-control mb-3" id="exampleInputDescription"
+                  aria-describedby="emailHelp" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword">Password</label>
+                <input type="password" name="password" class="form-control mb-4" id="exampleInputPassword"
+                  placeholder="">
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+          <%- include('./includes/adm/adm') %> 
+          <% } %>
+
+
+            <%- include('./includes/footer') %>
