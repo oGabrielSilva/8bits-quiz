@@ -1,0 +1,60 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/nav') %>
+        <%- include('../includes/messages') %>
+
+            <div class="container">
+                <div class="container my-5 p-3 bg-white rounded shadow-sm">
+                    <div class="container">
+                        <p class="h4 my-3">Faça sua reclamação</p>
+                        <p class="text-justify">
+                            Está página é destinada a reclamações gerais sobre o conteúdo do site. Evite mandar reclamações
+                            desnecessárias.<br> Alguns dos motivos de reclamações mais aceitáveis estão listadas abaixo:
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Bug</li>
+                            <li class="list-group-item">Quiz incorreto</li>
+                            <li class="list-group-item">Mal funcionamento</li>
+                            <li class="list-group-item">Erros no site</li>
+                            <li class="list-group-item">Problemas em quizzes</li>
+                        </ul>
+                        <br>
+                        Se seu problema não está listado, mas ainda precisa que seja resolvido, preencha o formulário
+                        abaixo colocando um e-mail válido, para que, se possível, a nossa equipe entre em contato.
+                        </p>
+                    </div>
+                </div>
+                <div class="container my-5 p-5 bg-white rounded shadow-sm">
+                    <p class="h4 my-3">Formulário de feedback</p>
+                    <form action="/reclame/send" method="POST">
+                        <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+                        
+                        <div class="form-group my-3">
+                            <label for="nameId">Seu nome</label>
+                            <input type="text" name="name" class="form-control" id="nameId" placeholder="André">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="surnameId">Seu sobrenome</label>
+                            <input type="text" name="surname" class="form-control" id="surnameId" placeholder="Silver">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="emailId">Endereço de email</label>
+                            <input type="email" name="email" class="form-control" id="emailId"
+                                placeholder="nome@exemplo.com">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="motiveId">Dê um título ao seu problema</label>
+                            <input type="text" name="motive" class="form-control" id="motiveId" placeholder="Bug do site">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="descriptionId">Escreva sobre o seu problema</label>
+                            <textarea name="description" class="form-control" id="descriptionId" rows="3" maxlength="250"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            
+
+            
+
+
+            <%- include('../includes/footer') %>

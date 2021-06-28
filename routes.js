@@ -4,8 +4,7 @@ const home = require('./src/controllers/home')
 const rank = require('./src/controllers/rank')
 const explore = require('./src/controllers/explore')
 const adm = require('./src/controllers/adm')
-// const login = require('./src/controllers/login')
-// const contact = require('./src/controllers/contact')
+const claims = require('./src/controllers/claims')
 
 // const { loginRequired } = require('./src/middlewares/global')
 
@@ -24,18 +23,8 @@ route.get('/explore', explore.index)
 //rank
 route.get('/rank', rank.index)
 
-//rotas do login
-// route.get('/login', login.index)
-// route.post('/login/register', login.register)
-// route.post('/login/enter', login.enter)
-// route.get('/login/out', login.out)
-
-// //rotas internas 
-// route.get('/contato', loginRequired, contact.contact)
-// route.post('/contato/cadastro', loginRequired, contact.sendContact)
-// route.get('/contato/:id', loginRequired, contact.editIndex)
-// route.post('/contato/edite/:id', loginRequired, contact.edit)
-// route.get('/contato/delete/:id', loginRequired, contact.del)
-
+//reclamações
+route.get('/reclame', claims.index)
+route.post('/reclame/send', claims.send)
 
 module.exports = route

@@ -2,7 +2,7 @@
   <%- include('./includes/nav') %>
     <%- include('./includes/messages') %>
       <% if(!adm) { %>
-        <div class="container my-3 p-3 bg-white rounded shadow-sm">
+        <div class="container my-5 p-3 bg-white rounded shadow-sm">
           <form action="/system.config.login" method="POST">
             <input type="hidden" name="_csrf" value="<%- csrfToken %>">
             <div class="form-group">
@@ -21,7 +21,7 @@
         
         <% } else { %>
         
-          <div class="container my-3 p-3 bg-white rounded shadow-sm">
+          <div class="container my-5 p-3 bg-white rounded shadow-sm">
             <p class="h4">Adicionar novo adm</p>
             <form action="/system.config.create.adm" method="POST">
               <input type="hidden" name="_csrf" value="<%- csrfToken %>">
