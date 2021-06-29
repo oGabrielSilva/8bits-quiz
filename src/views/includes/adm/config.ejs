@@ -1,0 +1,191 @@
+<div class="container my-5 p-3 bg-white rounded shadow-sm" id="config">
+    <p class="h4">Config</p>
+    <!-- Adicionar quiz -->
+    <div class="container my-5 p-3 list-group-item">
+        <p class="h4">Adicionar quiz</p>
+        <form action="/system.config.create.quiz" method="POST">
+          <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+
+            <div class="container my-3">
+                <div class="row">
+                    <div class="form-group my-3 col">
+                        <input type="text" name="title" class="form-control" placeholder="Título" maxlength="25" required>
+                    </div>
+                    <div class="form-group my-3 col">
+                        <select class="form-control" name="class">
+                            <option>Mitologia</option>
+                            <option>Anime</option>
+                            <option>Marvel</option>
+                            <option>Filme</option>
+                            <option>Série</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="h6">Pergunta 1: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest1" class="form-control" maxlength="150" required placeholder="Pergunta 1">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" required maxlength="16" name="right1" required placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" required maxlength="16" name="fake1" required placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 2: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest2" class="form-control" required maxlength="150" placeholder="Pergunta 2">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" required maxlength="16" name="right2" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" required maxlength="16" name="fake2" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 3: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest3" class="form-control" required maxlength="150" placeholder="Pergunta 3">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" required maxlength="16" name="right3" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" required maxlength="16" name="fake3" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 4: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest4" class="form-control" required maxlength="150" placeholder="Pergunta 4">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" required name="right4" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" required name="fake4" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 5: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest5" class="form-control" required maxlength="150" placeholder="Pergunta 5">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" required name="right5" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" required name="fake5" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 6: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest6" class="form-control" maxlength="150" placeholder="Pergunta 6">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="right6" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="fake6" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 7: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest7" class="form-control" maxlength="150" placeholder="Pergunta 7">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="right7" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="fake7" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 8: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest8" class="form-control" maxlength="150" placeholder="Pergunta 8">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="right8" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="fake8" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 9: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest9" class="form-control" maxlength="150" placeholder="Pergunta 9">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="right9" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="fake9" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+                <p class="h6">Pergunta 10: </p>
+
+                <div class="form-group my-3">
+                    <input type="text" name="quest10" class="form-control" maxlength="150" placeholder="Pergunta 10">
+                </div>
+                <div class="form-group my-3">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="right10" placeholder="Resposta correta">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" maxlength="16" name="fake10" placeholder="Resposta errada">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Remover quiz -->
+
+    <div class="container my-5 p-3 list-group-item" id="remove-quiz">
+        <p class="h4">Remover quiz</p>
+    </div>
+
+    <!-- Editar quiz -->
+
+    <div class="container my-5 p-3 list-group-item" id="edite-quiz">
+        <p class="h4">Editar quiz</p>
+    </div>
+</div>

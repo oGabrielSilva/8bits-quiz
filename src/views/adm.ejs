@@ -1,6 +1,6 @@
 <%- include('./includes/head') %>
-  <%- include('./includes/nav') %>
-    <%- include('./includes/messages') %>
+<%- include('./includes/nav') %>
+<%- include('./includes/messages') %>
       <% if(!adm) { %>
         <div class="container my-5 p-3 bg-white rounded shadow-sm">
           <form action="/system.config.login" method="POST">
@@ -18,9 +18,9 @@
             <button type="submit" class="btn btn-primary">Entrar</button>
           </form>
         </div>
-        
+
         <% } else { %>
-        
+
           <div class="container my-5 p-3 bg-white rounded shadow-sm">
             <p class="h4">Adicionar novo adm</p>
             <form action="/system.config.create.adm" method="POST">
@@ -53,8 +53,13 @@
               <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
           </div>
-          <%- include('./includes/adm/adm') %> 
-          <% } %>
+<%- include('./includes/adm/adm') %>
+<%- include('./includes/adm/feedbacks') %>
+<%- include('./includes/adm/config') %>
 
 
-            <%- include('./includes/footer') %>
+
+<% } %>
+
+
+<%- include('./includes/footer') %>

@@ -3,6 +3,7 @@ exports.middlewareGlobal = (req, res, next) => {
     res.locals.success = req.flash('success')
     res.locals.adm = req.session.adm
     res.locals.groupAdm = req.session.groupAdm
+    res.locals.feedbacks = req.session.feedbacks
     next()
 }
 

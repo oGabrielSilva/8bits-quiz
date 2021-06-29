@@ -55,6 +55,11 @@ class Feedback {
             description: this.body.description
         }
     }
+
+    static async findFeedback() {
+        const feedbacks = await FeedbackModel.find()
+        return feedbacks
+    }
 }
 
 module.exports = Feedback;

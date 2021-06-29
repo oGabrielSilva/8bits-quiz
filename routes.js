@@ -6,13 +6,14 @@ const explore = require('./src/controllers/explore')
 const adm = require('./src/controllers/adm')
 const claims = require('./src/controllers/claims')
 
-// const { loginRequired } = require('./src/middlewares/global')
+const { loginRequired } = require('./src/middlewares/global')
 
 //adm
 route.get('/system.config', adm.index)
 route.get('/system.config/out', adm.out)
 route.post('/system.config.login', adm.login)
-route.post('/system.config.create.adm', adm.create)
+route.post('/system.config.create.adm', loginRequired, adm.create)
+route.post('/system.config.create.quiz', loginRequired, adm.createQuiz)
 
 //rotas da home
 route.get('/', home.index)
