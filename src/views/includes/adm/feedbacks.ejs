@@ -1,14 +1,36 @@
 <div class="container my-5 p-3 bg-white rounded shadow-sm" id="feedbacks">
     <p class="h4">Reclamações</p>
-    <% feedbacks.forEach(feedback => { %>
+    <% feedbacks.forEach(feedback=> { %>
         <span class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">@<%- feedback.name %> <%- feedback.surname %> | ID: <%- feedback._id %> </h5>
-                <small class="text-muted"><%- feedback.date %></small>
+                <h5 class="mb-1">@<%- feedback.name %>
+                        <%- feedback.surname %> | ID: <%- feedback._id %>
+                </h5>
+                <small class="text-muted">
+                    <%- feedback.date %>
+                </small>
             </div>
-            <p class="mb-1 h5"><%- feedback.motive %></p>
-            <p class="mb-1"><%- feedback.description %></p>
-            <small class="text-muted"><%- feedback.email %></small>
+            <p class="mb-1 h5">
+                <%- feedback.motive %>
+            </p>
+            <p class="mb-1">
+                <%- feedback.description %>
+            </p>
+            <small class="text-muted"><a target="_blank" href="mailto:<%- feedback.email %>">
+                    <%- feedback.email %>
+                </a></small>
         </span>
     <% }) %>
+    <form action="/system.config/remove.claims" method="POST">
+        <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+        <div class="container my-3">
+            <div class="row">
+                <p class="h5">Remover reclamação</p>
+                <div class="form-group my-3 col">
+                    <input type="text" name="id" class="form-control" placeholder="ID" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger">Remover</button>
+        </div>
+    </form>
 </div>

@@ -15,6 +15,7 @@ route.post('/system.config.login', adm.login)
 route.post('/system.config.create.adm', loginRequired, adm.create)
 route.post('/system.config.create.quiz', loginRequired, adm.createQuiz)
 route.post('/system.config.remove.quiz', loginRequired, adm.removeQuiz)
+route.post('/system.config/remove.claims', loginRequired, claims.removeClaims)
 
 //rotas da home
 route.get('/', home.index)

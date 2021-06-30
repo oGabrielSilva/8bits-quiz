@@ -60,6 +60,11 @@ class Feedback {
         const feedbacks = await FeedbackModel.find()
         return feedbacks
     }
+
+    static async findAndRemoveFeedback(id) {
+        const feedback = await FeedbackModel.findByIdAndDelete(id.id)
+        return feedback
+    }
 }
 
 module.exports = Feedback;
