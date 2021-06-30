@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const QuizSchema = new mongoose.Schema({
     date: { type: String, required: true },
+    placing: { type: Number, min: 0, max: 100 },
     title: { type: String, required: true },
     class: { type: String, required: true },
     quest1: { type: String, required: true },
@@ -81,6 +82,12 @@ class Quiz {
         this.body = null
         this.body = { ...aux }
         this.body.date = new Date().toLocaleString('pt-br')
+        this.body.placing = 0
+    }
+
+    static async removeById(id) {
+        const quiz = await QuizModel.findByIdAndDelete(id.id)
+        return quiz
     }
 }
 

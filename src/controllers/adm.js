@@ -83,3 +83,17 @@ exports.createQuiz = async (req, res) => {
         res.render('404')
     }
 }
+
+exports.removeQuiz = async (req, res) => {
+    try {
+        const date = await Quiz.removeById(req.body)
+        req.flash('success', `Quiz "${date.title}" da classe "${date.class}" foi removido com sucesso.`)
+        req.session.save(() => {
+            res.redirect('/system.config')
+        })
+        return
+    } catch(e) {
+        console.log(e)
+        res.render('404')
+    }
+}
